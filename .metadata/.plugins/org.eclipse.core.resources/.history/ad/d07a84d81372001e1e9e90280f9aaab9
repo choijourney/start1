@@ -1,0 +1,18 @@
+package chap3;
+
+public class Exam1 {
+
+	public static void main(String[] args) {
+		int x = 10;
+		// ++ 연산자를 이용하여 x=10 결과가 나오도록 프로그램 코딩하기
+		// -- 연산자를 이용하여 x=10 결과가 나오도록 프로그램 코딩하기
+		System.out.println("x= " + x++);
+		System.out.println("x= " + x--);
+
+//		 System.out.println(+x);
+//		 x=-10;
+//		 System.out.println(-x);
+
+	}
+
+}

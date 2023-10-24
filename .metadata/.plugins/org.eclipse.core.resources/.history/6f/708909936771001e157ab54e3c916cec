@@ -1,0 +1,15 @@
+package chap1;
+// 주석 : 컴파일 되지 않는 영역, 기계어 번역 안됨
+// 문법과 상관없이 소스의 설명등을 기술함
+/* 여러줄 주석  */
+// 한줄 주석
+// 1. 소스 코딩 : Hello.java
+// 2. 컴파일 단계 : javac Hello.java => 바이트 코드 생성 (Hello.class)
+public class Hello {
+
+	public static void main(String[] args) { //프로그램의 시작.
+		System.out.println("Hello World");
+		//System.out : 표준 출력 => 콘솔(화면) 출력
+	}
+
+}
