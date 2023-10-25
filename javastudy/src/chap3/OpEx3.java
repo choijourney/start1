@@ -29,7 +29,7 @@ public class OpEx3 {
 		System.out.println(-10 % 8);// -2
 		System.out.println(10 % -8); // 2
 		System.out.println(-10 % -8); // -2
-		// 나머지의 결과값은 피잿수의 부호를 따라간다
+		// 나머지의 결과값은 나누어지는수의 부호를 따라간다
 	}
 
 }

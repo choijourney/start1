@@ -22,6 +22,24 @@ public class test1 {
 		System.out.println("500원 : " + oBack + "개  100원 : " + back + "개  50원 : " + oShip + "개 10원 : " + ship + "개 1원 : "
 				+ il + "개");
 
+		System.out.println("--------------------");
+
+		System.out.println("500원 : " + money / 500 + "개");
+		System.out.println("100원 : " + ((money % 500) / 100) + "개");
+		System.out.println("50원 : " + ((money % 100) / 50) + "개");
+		System.out.println("10원 : " + ((money % 50) / 10) + "개");
+		System.out.println("1원 : " + (money % 10) + "개");
+		System.out.println("==================");
+		System.out.println("500원 : " + money / 500 + "개");
+		money %= 500;
+		System.out.println("100원 : " + money / 100 + "개");
+		money %= 100;
+		System.out.println("50원 : " + money / 50 + "개");
+		money %= 50;
+		System.out.println("10원 : " + money / 10 + "개");
+		money %= 10;
+		System.out.println("1원 : " + money + "개");
+
 	}
 
 }

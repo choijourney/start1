@@ -21,6 +21,11 @@ public class test2 {
 		int num3 = (nums % 10 != 0) ? num2 : (nums - nums);
 		System.out.println(num3);
 
+		// 선생님방법
+		System.out.println("두자리 자연수를 입력하세요");
+		int num = sc.nextInt();
+		int num10 = (num % 10 == 0) ? num : ((num / 10 + 1) * 10);
+		System.out.println((num10 - num) + " : " + num10 + " - " + num);
 	}
 
 }

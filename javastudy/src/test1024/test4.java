@@ -15,7 +15,7 @@ public class test4 {
 
 		int number = (num < num1) ? num1 : num;
 		System.out.println(number);
-
+		System.out.printf("%d , $d 둘 중 더 큰 수는 : %d ", num, num1, number);
 	}
 
 }

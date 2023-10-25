@@ -12,11 +12,15 @@ public class test5 {
 		 */
 
 		Scanner sc = new Scanner(System.in);
+		System.out.println("밑변의 길이");
 		int width = sc.nextInt();
+		System.out.println("높이의 길이");
 		int height = sc.nextInt();
 		double d = width * height / 2;
 		System.out.println("넓이 = " + width + "*" + height + " / " + "2 = " + d);
 
+		// 선생님방법
+		System.out.println(width * height / 2.0);
 	}
 
 }
