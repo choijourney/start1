@@ -15,17 +15,35 @@ public class test2 {
 		 */
 
 		int com = (int) (Math.random() * 3) + 1;
+		System.out.println("시스템 숫자 " + com);
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("가위(1), 바위(2), 보(3) 를 숫자로 입력하세요.");
 		int i = sc.nextInt();
+		boolean b = false;
 
-		if (com > i) {
-			System.out.println("사용자 승리!");
-		} else if (com < i) {
-			System.out.println("컴 승리!");
-		} else {
+		if (com == i) {
 			System.out.println("비김");
+		} else {
+			switch (com) {
+			case 1:
+				if (i == 2)
+					b = true;
+				break;
+			case 2:
+				if (i == 3)
+					b = true;
+				break;
+			case 3:
+				if (i == 1)
+					b = true;
+				break;
+			}
+			if (b == true) {
+				System.out.println("사용자가 승리했습니다.");
+			} else {
+				System.out.println("시스템이 승리했습니다.");
+			}
 		}
 
 	}

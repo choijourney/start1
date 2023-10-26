@@ -11,6 +11,7 @@ public class test4 {
 		 * 
 		 * 년도를 입력하세요 2100 평년
 		 */
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("년도를 입력하세요.");
 		int year = sc.nextInt();
@@ -29,6 +30,13 @@ public class test4 {
 		} else {
 			System.out.println("평년");
 		}
+
+		System.out.println("------------");
+
+		if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+			System.out.println("윤년");
+		} else
+			System.out.println("평년");
 
 	}
 

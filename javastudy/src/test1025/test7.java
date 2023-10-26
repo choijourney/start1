@@ -11,11 +11,11 @@ public class test7 {
 		 ***
 		 *****
 		 * 
-		 */ // 5-4 =1 5-2=3 5-0 = 5
+		 */
 		Scanner sc = new Scanner(System.in);
 		System.out.println("숫자를 써주세요");
 		int n = sc.nextInt();
-		int i, j, k, m;
+		int i, j, k;
 
 		for (i = 1; i <= n; i++) {
 			for (j = 1; j <= n - i; j++) { // j <= n- j 는 안됨. 그래서 오류
