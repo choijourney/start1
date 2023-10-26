@@ -11,7 +11,7 @@ import java.util.Scanner;
 5	4	3	2	1	
  
 */
-public class test4 {
+public class test4star {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -34,17 +34,38 @@ public class test4 {
 
 		// 방법 2.
 
+		int odd = height * 3;
 		int b = height * 2 - 1; // 바닥의 개수 5
 		int m = b / 2; // 중간값
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < b; j++) { // j는 5번 가로를 반복해야함
+
 				if (j >= m - i && j <= m + i) {
-					System.out.print("*");
-				} else
-					System.out.print(" ");
+					System.out.print(odd + "\t");
+					odd--;
+					if (j >= 0 || j <= 1) {
+						System.out.print("\t");
+					} else
+						System.out.print(" ");
+
+				}
 			}
+
 			System.out.println();
 		}
+
+//		System.out.println("---------");
+//		int b = height * 2 - 1; // 바닥의 개수 5
+//		int m = b / 2; // 중간값
+//		for (int i = 0; i < height; i++) {
+//			for (int j = 0; j < b; j++) { // j는 5번 가로를 반복해야함
+//				if (j >= m - i && j <= m + i) {
+//					System.out.print("*");
+//				} else
+//					System.out.print(" ");
+//			}
+//			System.out.println();
+//		}
 
 	}
 
