@@ -1,8 +1,8 @@
-package chap5;
+package chap5array;
 
 public class arrayEx1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // 배열이 업데이트가 된다??
 
 		// 배열 : 하나의 이름으로 여러개의 값을 저장. 같은 자료형이어야함.
 		// 구조체 하나의 이름으로 여러개의 갑을 저장. 다른 자료형 가능함.
@@ -20,7 +20,7 @@ public class arrayEx1 {
 		}
 
 		// new 예약어
-		// 1. 객체 생성. int 값 10개 저장할 수 있는 변수를 할당. length상수값 설정
+		// 1. 객체 생성. int 값 10개 저장할 수 있는 변수를 할당. heightgth상수값 설정
 		// 2. 기본값 초기화
 		// 숫자형 : 0
 		// 불리언 : false

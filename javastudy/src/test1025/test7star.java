@@ -28,6 +28,22 @@ public class test7star {
 			System.out.println();
 		}
 
+		// T 방식
+		System.out.print("삼각형의 높이 :");
+		Scanner scan = new Scanner(System.in);
+		int h = scan.nextInt();
+		int b = h * 2 - 1; // 바닥의 *의 갯수
+		int m = b / 2; // 중간값
+		for (i = 0; i < h; i++) {
+			for (j = 0; j < b; j++) {
+				if (j >= m - i && j <= m + i)
+					System.out.print("*");
+				else
+					System.out.print(" ");
+			}
+			System.out.println();
+		}
+
 //		// 오른쪽 삼각형 별 만들기
 //		int i, j, k;
 //

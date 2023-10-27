@@ -1,4 +1,4 @@
-package chap5;
+package chap5array;
 
 import java.util.Scanner;
 

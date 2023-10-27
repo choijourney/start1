@@ -43,16 +43,32 @@ public class test4star {
 				if (j >= m - i && j <= m + i) {
 					System.out.print(odd + "\t");
 					odd--;
-					if (j >= 0 || j <= 1) {
-						System.out.print("\t");
-					} else
-						System.out.print(" ");
 
-				}
+				} else
+					System.out.print("\t");
+
 			}
-
-			System.out.println();
 		}
+
+		System.out.println();
+
+//		// T방식
+//
+//		int bottom = height * 2 - 1;
+//		int data1 = 0; // 숫자의 시작값
+//		for (int i = bottom; i >= 1; i -= 2) {
+//			data1 += i;
+//		}
+//		int m1 = bottom / 2;
+//		for (int i = 0; i < height; i++) {
+//			for (int j = 0; j < bottom; j++) {
+//				if (j >= m1 - i && j <= m1 + i)
+//					System.out.print(data1-- + "\t");
+//				else
+//					System.out.print("\t");
+//			}
+//			System.out.println();
+//		}
 
 //		System.out.println("---------");
 //		int b = height * 2 - 1; // 바닥의 개수 5

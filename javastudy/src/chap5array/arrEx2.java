@@ -1,4 +1,4 @@
-package chap5;
+package chap5array;
 
 // 배열의 선언,생성,초기화하기
 
