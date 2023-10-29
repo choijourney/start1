@@ -43,7 +43,7 @@ public class arrEx3lotto {
 					lotto[j + 1] = tmp;
 				}
 			}
-			System.out.print(i + ":");
+			System.out.print(i + ":"); // 0:14 7 26 8 15 36 이렇게 출력하기위해 for i 를쓰고 forEacht를씀?
 			for (int a : lotto)
 				System.out.print(a + " ");
 			System.out.println();

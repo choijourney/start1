@@ -21,17 +21,21 @@ public class test2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("숫자만 입력하세요");
-		int n = sc.nextInt();
-		char c = (char) n;
-		char[] cArr;
+		String n = sc.nextLine();
+		char[] c = n.toCharArray();
+		int count = 0; // 숫자일때마다 카운트를 셈
 
-		System.out.println(c);
+		for (int i = 0; i < c.length; i++) { //
+			System.out.print(c[i]);
+			if (c[i] >= '0' && c[i] <= '9') {
+				count++;
+			}
+		}
 
-//		if (c >= '0' && c <= '9') {
-//			System.out.println("숫자입니다.");
-//		} else
-//			System.out.println(c + "는 숫자가 아닙니다.");
+		if (count == c.length) {
+			System.out.print(": 숫자 입니다.");
+		} else
+			System.out.print(": 숫자가 아닙니다.");
 
 	}
-
 }

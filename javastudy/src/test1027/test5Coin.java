@@ -28,41 +28,42 @@ import java.util.Scanner;
 남은 동전 5원:5개
 남은 동전 1원:5개
 */
-public class test5 {
-
+public class test5Coin {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int mount;
 
+		int money;
 		while (true) {
 			System.out.println("금액을 입력하세요");
-			mount = sc.nextInt();
-			if (mount <= 3330) {
+			money = sc.nextInt();
+			if (money <= 3330) {
 				break;
 			}
 			System.out.println("동전이 부족합니다.");
 		}
 
 		int[] coin = { 500, 100, 50, 10, 5, 1 };
-		int[] coinCount = new int[6];
-		int[] leftCount = new int[6];
+		int[] coinCount = new int[6]; // 동전 개수 카운트
+		int[] leftCoin = new int[6]; // 남은동전수
+		int count;
 
 		for (int i = 0; i < coin.length; i++) {
-			int num = mount / coin[i]; // 동전개수
-			if (num > 5) {
-				num = 5;
+			count = money / coin[i]; // 동전개수 = 돈 나누기 동전
+			if (count >= 5) { // 동전개수가 5보다크면
+				count = 5; // 동전개수는 5
 			}
-			System.out.println(coin[i] + "원 : " + num + "개");
-			coinCount[i] = num;
-			mount -= num * coin[i];
+			coinCount[i] = count; // 동전개수 배열에 동전개수추가
+			money -= count * coin[i]; // 돈= 돈- 동전개수*500 3000-5*500 = 500
+			leftCoin[i] = 5 - count;
 		}
-
-		// 남은 동전
 
 		for (int i = 0; i < coinCount.length; i++) {
-			System.out.println("남은 동전 " + coin[i] + "원 : " + (5 - coinCount[i]) + "개");
+			System.out.println(coin[i] + "원 :" + coinCount[i] + "개");
+		}
+		for (int i = 0; i < leftCoin.length; i++) {
+			System.out.println("남은 동전 " + coin[i] + "원 :" + leftCoin[i] + "개");
 		}
 
-	}
+	}//
 
 }

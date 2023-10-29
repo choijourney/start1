@@ -11,7 +11,7 @@ package test1027;
  */
 public class test6 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // 중복되지않는 숫자여야함
 		// 1~9 까지 숫자 배열에 저장
 		int[] num = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		int[] p = new int[3]; // 나중에 p배열에 num중 3개숫자를 옮길거임
@@ -32,7 +32,7 @@ public class test6 {
 
 		// p 정렬
 		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3 - 1 - i; j++) { // index때문에 1을빼고 마지막숫자는 비요안할거라 i를 뻄
+			for (int j = 0; j < 3 - 1 - i; j++) { // index때문에 1을빼고 마지막숫자는 비교안할거라 i를 뻄
 				if (p[j] > p[j + 1]) {
 					int tmp = p[j];
 

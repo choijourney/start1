@@ -10,28 +10,24 @@ import java.util.Scanner;
   *
  
  */
-public class test5star {
-
+public class test5$ {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("삼각형의 높이를 입력하세요");
+		int num = sc.nextInt();
+		int five = num * 2 - 1;
+		int minus = five;
 
-		int t = sc.nextInt();
+		for (int i = 1; i <= num; i++) {
 
-		// 거꾸로 삼각형
-
-		int p = t;
-
-		int i, j, k;
-		for (i = 1; i <= t; i++) {
-			for (k = 0; k < i - 1; k++) { // k는 println후에 0부터 다시시작
+			for (int k = 0; k < i - 1; k++) { // 공백이 앞에있어야 공백이찍힌다
 				System.out.print(" ");
 			}
-			for (j = 0; j < p * 2 - 1; j++) {
+			for (int j = 0; j < minus; j++) {
 				System.out.print("*");
 			}
-			p--;
+			minus -= 2;
 			System.out.println();
 		}
 
@@ -49,7 +45,7 @@ public class test5star {
 //		}
 //		int len = sc.nextInt();
 //		int bottom = len * 2 - 1;
-//		int m = bottom / 2;  //여기선 안필요함
+//		int m = bottom / 2;
 //		for (int i = 0; i < len; i++) {
 //			for (int j = 0; j < bottom - i; j++) {
 //				if (j >= i)
@@ -59,7 +55,5 @@ public class test5star {
 //			}
 //			System.out.println();
 //		}
-
 	}
-
 }

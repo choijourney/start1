@@ -36,9 +36,9 @@ public class test7star {
 		int m = b / 2; // 중간값
 		for (i = 0; i < h; i++) {
 			for (j = 0; j < b; j++) {
-				if (j >= m - i && j <= m + i)
-					System.out.print("*");
-				else
+				if (j >= m - i && j <= m + i) // 인덱스 0 1 2 3 4 일때 별을 찍도록.
+					System.out.print("*"); // 인덱스로 처음에 2자리에 *하나찍고 1 2 3 자리에 찍고
+				else // 012345 자리에 찍도록 만든식.
 					System.out.print(" ");
 			}
 			System.out.println();
