@@ -4,7 +4,7 @@ package chap5array;
 // 2차원 배열은 1차원 배열의 참조변수의 배열임
 // 자바에서는 다차원(2차원이상) 배열은 n-1 차원 배열의 참조변수의 배열임
 // 	=> 다차원 배열은 배열의 배열로 표현됨
-public class arrEx8 {
+public class arrEx8multiArray {
 
 	public static void main(String[] args) {
 		// 배열의 선언과 생성

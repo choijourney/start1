@@ -2,7 +2,7 @@ package chap4IFLoopSwitch;
 
 // 컴퓨터에서 난수(임의의 수)를 선택하여 상품 출력하기
 
-public class SwitchEx2 {
+public class SwitchEx2MathRandom {
 
 	public static void main(String[] args) {
 		int num = (int) (Math.random() * 10) + 1;

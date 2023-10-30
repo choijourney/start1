@@ -13,7 +13,7 @@ package chap5array;
 // 	-바이트코드 클래스영역 메모리 로드 
 // 	-args 배열의 값을 생성하여 main메서드에 전달, main메서드 실행.
 
-public class arrEx6 {
+public class arrEx6commandLine {
 
 	public static void main(String[] args) {
 		if (args.length == 0) {
