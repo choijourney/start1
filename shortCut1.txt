@@ -1,4 +1,7 @@
 git config --global core.autocrlf true 
+i 방향으로 0~1   i - 1
+i 방향으로 5~3   p * 2 - 1  대신 p는 num(입력받은값) 을 복사한값
+
   	모든 단축키는 Window >> Preferences >> General >> Keys 메뉴에서 확인 및 변경이 가능하다.
 변수, 메소드 이름 한번에 변경 : alt + Shift + R
 alt + Shift + M : 블럭잡은 구문을 메소드로 추출 / 생성자생성 @@@@@@

@@ -30,5 +30,21 @@ public class Exam7 {
 			System.out.println();
 		}
 
+		// T방식
+		max = 0;
+		for (int i = 1; i <= num; i++) {
+			max += i;
+		}
+		data = max;
+
+		for (int i = 0; i < num; i++) {
+			for (int j = 0; j < num; j++) {
+				if (i > j) // %3c : char 문자 3자리로 출력.
+					System.out.printf("%3c", ' '); // 공백 출력
+				else if (i <= j)
+					System.out.printf("%3d", data--); // 숫자 출력
+			}
+			System.out.println();
+		}
 	}
 }
