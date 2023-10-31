@@ -14,57 +14,33 @@ import java.util.Scanner;
 public class test3 {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("배열의 길이를 홀수로 입력하세요");
-		int num = sc.nextInt();
-		int max = num * 2 - 1;
-		// 처음 숫자 구하기 1~num 까지 더하고 +2
+		Scanner scan = new Scanner(System.in);
+		System.out.println("길이를 홀수로 입력하세요");
+		int num = scan.nextInt();
+		int[][] matrix = new int[num][num];
 		int sum = 0;
-		for (int i = 1; i <= num; i++) {
+		for (int i = 1; i <= num; i += 2)
 			sum += i;
-		}
-		int data = sum + 2;
-
-		int[][] pattern = new int[num][num];
-		int currentNumber = 17;
-
-		for (int i = 0; i < num; i++) {
-			for (int j = i; j < num - i; j++) {
-				pattern[i][j] = currentNumber--;
+		int data = sum * 2 - 1; // 시작되는 숫자값
+		for (int i = 0; i <= matrix.length / 2; i++) {
+			for (int j = i; j < matrix.length - i; j++) {
+				matrix[i][j] = data--;
 			}
 		}
-
-		// 패턴 출력
-		for (int i = 0; i < pattern.length - 1; i++) {
-			for (int j = 0; j < num; j++) {
-				if (pattern[i][j] == 0) {
-					System.out.print("\t"); // 빈 공간 출력
-				} else {
-					System.out.print(pattern[i][j] + "\t"); // 숫자 출력
-				}
+		for (int i = matrix.length / 2 + 1; i < matrix.length; i++) {
+			for (int j = matrix.length - i - 1; j <= i; j++) {
+				matrix[i][j] = data--;
 			}
-			System.out.println(); // 줄 바꿈
 		}
-
-		// 출력
-//		for (int[] ar : arr) {
-//			for (int a : ar) {
-//				System.out.print(a);
-//			}
-//			System.out.println();
-//		}
-
-//		for (i = 0; i < num - 1; i++) { // 0~1 반복 두줄
-//		for (j = 0; j < i; j++) {
-//			arr[i][j] = ' ';
-//		}
-//		for (k = 0; k < minus * 2 - 1; k++) {
-//			arr[i][k] = data--;
-//		}
-//
-//		minus--;
-//		System.out.println();
-//	}
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (matrix[i][j] == 0)
+					System.out.printf("%4c", ' ');
+				else
+					System.out.printf("%4d", matrix[i][j]);
+			}
+			System.out.println();
+		}
 	}
 
 }

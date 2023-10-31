@@ -21,45 +21,49 @@ import java.util.Scanner;
 public class test4baseball {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("4자리 정수를 입력하세요");
-		String numb = sc.next();
-		char[] charNum = numb.toCharArray(); // String을 char배열에 저장
-
-		int[] num = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		int[] sys = new int[4]; // 시스템 배열에 랜덤숫자 4개 저장
-		int r, t;
-		for (int i = 0; i < 100; i++) {
-			r = (int) (Math.random() * 10);
-			t = (int) (Math.random() * 10);
-			int tem = num[r];
-			num[r] = num[t]; // swap
-			num[t] = tem;
+		int numarr[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		String answer = ""; // 시스템이 저장한 4개의 숫자
+		for (int i = 0; i <= 1000; i++) {
+			int f = (int) (Math.random() * 10); // 0~9 사이의 임의의 수
+			int t = (int) (Math.random() * 10); // 0~9 사이의 임의의 수
+			// swap 알고리즘
+			int temp = numarr[f];
+			numarr[f] = numarr[t];
+			numarr[t] = temp;
 		}
-
-		for (int i = 0; i < sys.length; i++) { // 랜덤숫자 4개 저장
-			sys[i] = num[i];
+		for (int i = 0; i < 4; i++) {
+			answer += numarr[i];
 		}
-
-		// 값이 같은지 비교
-		int strike = 0;
-		int ball = 0;
-		for (int i = 0; i < charNum.length; i++) {
-			for (int j = 0; j < charNum.length; j++) {
-				if (charNum[i] - '0' == sys[i]) {
-					strike++;
-					System.out.println(strike + "스트라이크");
-				} else if (charNum[i] != sys[j]) {
-				} else {
-					ball++;
-					System.out.println(ball + "볼");
+//		System.out.println(answer);  //정답 출력
+		Scanner scan = new Scanner(System.in);
+		int cnt = 0; // 입력한 횟수 저장
+		while (true) {
+			System.out.println("서로다른 4자리 정수를 입력하세요");
+			String rcvNum = scan.nextLine();
+			cnt++; // 입력 횟수 1 증가
+			int strike = 0;
+			int ball = 0;
+			// 스트라익,볼 계산
+			for (int i = 0; i < answer.length(); i++) { // 정답 글자
+				for (int j = 0; j < rcvNum.length(); j++) { // 입력한 숫자
+					if (answer.charAt(i) == rcvNum.charAt(j)) { // 같은 값이 존재
+						if (i == j)
+							strike++; // 정답 위치와 입력한 숫자의 위치 같음
+						else
+							ball++; // 정답 위치와 입력한 숫자의 위치 다름
+						break; // j for 구문 빠짐.
+					}
 				}
 			}
+			if (strike == 4) { // 정답
+				System.out.println(rcvNum + "정답입니다.");
+				System.out.println(cnt + "번 만에 맞추셨습니다. 게임을 종료합니다.");
+				break; // while 반복문 빠짐
+			} else {
+				System.out.println(rcvNum + ":" + strike + "스트라익, " + ball + "볼");
+			}
 		}
-
-//		for (int a : sys) {
-//			System.out.println(a);
-//		}
+		scan.close();
 
 	}
 

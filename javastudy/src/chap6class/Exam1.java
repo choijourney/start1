@@ -24,7 +24,7 @@ class Rectangle {
 public class Exam1 {
 
 	public static void main(String[] args) {
-		Rectangle r1 = new Rectangle();
+		Rectangle3 r1 = new Rectangle3();
 		r1.width = 10;
 		r1.height = 5;
 		r1.area();

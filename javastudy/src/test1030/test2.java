@@ -17,35 +17,35 @@ import java.util.Scanner;
 public class test2 {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("삼각형의 길이를 홀수로 입력하세요");
-		int num = sc.nextInt();
-		int maxLine = num * 2 - 1;
-
-		char[][] arr = new char[num][num * 2 - 1];
-
-		int half = num * 2 - 1;
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < maxLine - i; j++) { // 5 4 3 길이가 줄어들게 maxLine-i
-				if (j >= i) { // j와 i가 같을때 X자 그릴때처럼 i가 0, j가0, i1,j1 일때 별이 그려진다.
-					arr[i][j] = '*'; // j가 i와 같거나 i보다 클때 *을 찍으면 된다
-				} else {
-					arr[i][j] = ' ';
-				}
-				System.out.print(arr[i][j]);
+		Scanner scan = new Scanner(System.in);
+		System.out.println("길이를 홀수로 입력하세요");
+		int num = scan.nextInt();
+		char[][] matrix = new char[num][num];
+		// 위쪽 역삼각형부분의 * 채우기 (세줄)
+		for (int i = 0; i <= matrix.length / 2; i++) { // 세줄이니까 0,1,2 까지 세번반복
+			for (int j = i; j < matrix.length - i; j++) { // j=0; j<5-0; 0,1,2,3,4 반복
+				matrix[i][j] = '*';
+			}
+		}
+		// 아래쪽 삼각형 부분의 * 채우기 (두줄)
+		for (int i = matrix.length / 2 + 1; i < matrix.length; i++) { // i=3; i<5 두줄 i의 인덱스는 3,4
+			for (int j = matrix.length - i - 1; j <= i; j++) { // 5-3-1 =1; j<=i; i가3이니까 j는 1,2,3 자리에 *찍음
+				matrix[i][j] = '*'; // i=4 가되면 5-4-1= 0 ; j<=i; i가 4니까 0,1,2,3,4 자리에 * 찍음
+			}
+		}
+		// 모래시계 출력하기
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				System.out.print(matrix[i][j]);
 			}
 			System.out.println();
 		}
-
-		// 아래 삼각형 두줄
-		char[][] arr2 = new char[num - 1][half];
-		for (int i = 0; i < num - 1; i++) {
-			for (int j = 0; j < num - i - 2; j++) {
-				arr2[i][j] = ' ';
+		// 개선된 for 구문으로 출력하기
+		for (char[] arr : matrix) {
+			for (char a : arr) {
+				System.out.print(a);
 			}
-			for (int j = 0; j < num; j++) {
-
-			}
+			System.out.println();
 		}
 
 	}

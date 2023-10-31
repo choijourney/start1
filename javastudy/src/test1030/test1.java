@@ -1,8 +1,8 @@
 package test1030;
 
 /*
- * int[][] score = {
-				{90,80,70},
+ * int[][] score = {	요소가 맨오른쪽에 저장될지, 맨아래에 저장될지가 중요
+				{90,80,70},		
 				{95,85,75},
 				{70,80,75},
 				{75,70,85},
@@ -19,50 +19,32 @@ package test1030;
 public class test1 {
 
 	public static void main(String[] args) {
-		// 2차원배열 값이 다르면 예를들어 {1,2}, {123} 이런경우 가장 긴 배열의 값을 2차원배열 길이로 써줌
 		int[][] score = { { 90, 80, 70 }, { 95, 85, 75 }, { 70, 80, 75 }, { 75, 70, 85 }, { 70, 75, 80 } };
 		int[][] result = new int[score.length + 1][score[0].length + 1];
-		// 가변배열로 배열을 만들면 for문에서 값을 대입할수없다
-
-		int sum = 0;
-		// score 배열 result 배열로 복사
+		// score 값과 합계를 result 배열에 저장
 		for (int i = 0; i < score.length; i++) {
-			sum = 0;
 			for (int j = 0; j < score[i].length; j++) {
-
-				result[i][j] = score[i][j];
-				sum += score[i][j];
-				result[i][result[i].length - 1] = sum; // 열에 합계 추가 (맨오른쪽줄)
-
+				result[i][j] = score[i][j]; // score 값을 result 배열에 저장
+				// 마지막 열에 행의 합을 저장
+				result[i][score[i].length] += score[i][j]; // 인덱스 [i]는 0,1,2,3,4로 바뀌고 score[i].length는 3이니까 [i][3] 에
+															// score[i][j]가 들어감
+				// 마지막 행에 열의 합을 저장
+				result[score.length][j] += score[i][j]; // 인덱스가 score.length면 [5][j] j값은 0,1,2로 바뀌니까 [5][0]에
+														// score[0][0]이 들어가고, [5][1]에 score[0][1] 이들어감
+				// 전체합 result 배열의 마지막 셀에 저장
+				result[score.length][score[i].length] += score[i][j];
 			}
 		}
-
-		// result배열에 합계추가
-		for (int i = 0; i < score[i].length; i++) {
-			sum = 0;
-			for (int j = 0; j < score.length; j++) { // 0~3 반복
-				sum += score[j][i];
-				result[result.length - 1][i] = sum;
-
-			}
-		}
-
-		// result 총합
 		for (int i = 0; i < result.length; i++) {
-			sum = 0;
 			for (int j = 0; j < result[i].length; j++) {
-
-				result[result.length - 1][result[i].length - 1] = sum;
-				if (j == result[i].length - 1) {
-					break;
-				}
-				sum += result[result.length - 1][j];
+				System.out.printf("%5d", result[i][j]);
 			}
+			System.out.println();
 		}
-
-		for (int[] r : result) {
-			for (int r2 : r) {
-				System.out.print(r2 + "\t");
+		System.out.println("개선 for 구문으로 출력");
+		for (int[] arr : result) { // 인덱스 사용.
+			for (int a : arr) {
+				System.out.printf("%5d", a);
 			}
 			System.out.println();
 		}
