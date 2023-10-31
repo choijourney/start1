@@ -9,31 +9,28 @@ public class Exam6$ {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("삼각형의 높이를 입력하세요");
-		int len = sc.nextInt();
+		int num = sc.nextInt();
 
-		// 첫 숫자 만들기
+		// 1~num까지 숫자를 더하면 처음숫자
 		int sum = 0;
-		int data = 0;
-		for (int i = 1; i <= len; i++) {
+		for (int i = 1; i <= num; i++) {
 			sum += i;
 		}
-		data = sum;
 
-		int[][] arr = new int[len][len];
-		// 역삼각형 만들기
-		for (int i = 0; i < len; i++) {
-			for (int j = i; j < len; j++) {
-				arr[i][j] = data--;
+		int[][] arr = new int[num][num];
+		for (int i = 0; i < num; i++) {
+			for (int j = i; j < num; j++) {
+				arr[i][j] = sum--;
+				// 여기서 arr을 출력하면 위식에서 정해놓은 인덱스때문에 원하는모양이안나옴
 			}
 		}
 
-		for (int[] a : arr) {
-			for (int result : a) {
-				if (result == 0) {
+		for (int[] ar : arr) {
+			for (int a : ar) {
+				if (a == 0) {
 					System.out.printf("%3c", ' ');
-				} else {
-					System.out.printf("%3d", result);
-				}
+				} else
+					System.out.printf("%3d", a);
 			}
 			System.out.println();
 		}
