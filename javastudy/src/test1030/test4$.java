@@ -23,51 +23,27 @@ public class test4$ {
 	public static void main(String[] args) {
 		int[] arr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		int[] arr2 = new int[4];
+
 		int r, t;
-		for (int i = 0; i < 50; i++) { // 숫자섞기
+		for (int i = 0; i <= 50; i++) { // 배열에 랜덤숫자 4개저장
 			r = (int) (Math.random() * 10);
 			t = (int) (Math.random() * 10);
 			int tem = arr[r];
-			arr[r] = arr[t];
+			arr2[r] = arr[t];
 			arr[t] = tem;
-		}
 
-		String st = "";
-		for (int i = 0; i < arr2.length; i++) { // 4개랜덤숫자 문자열로 변환 (인덱스를 이용하기위해)
-			arr2[i] = arr[i];
-			st += arr2[i];
 		}
-
-		int cnt = 0;
 
 		Scanner sc = new Scanner(System.in);
 		while (true) {
-			System.out.println("4자리 정수를 입력해주세요.");
+			System.out.println("4자리 정수를 입력하세요.");
 			String num = sc.next();
-			int strike = 0;
-			int ball = 0;
-			cnt++;
-			for (int i = 0; i < num.length(); i++) {
-				for (int j = 0; j < st.length(); j++) {
-					if (num.charAt(i) == st.charAt(j)) {
-						if (i == j) {
-							strike++;
-						} else {
-							ball++;
-						}
-						break;
-					}
-				}
 
-			}
-			if (strike == 4) {
-				System.out.println(cnt + "번만에 맞추셨습니다. 축하합니다.");
-				break;
-			} else {
-				System.out.println(ball + "볼, " + strike + "스트라이크 입니다.");
+			for (int i = 0; i < arr2.length; i++) { // 배열에 arr
+				String sys = "";
+				sys += arr[i];
 			}
 		}
-
 	}
 
 }

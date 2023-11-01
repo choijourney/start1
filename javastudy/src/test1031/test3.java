@@ -8,10 +8,10 @@ package test1031;
                  앞면,뒷면 출력함. 
 */
 class Coin {
-	int side;
+	int side; // 멤버변수,필드
 
 	public void flip() {
-		side = (int) (Math.random() * 2);
+		side = (int) (Math.random() * 2); // 0 이면 앞면, 1이면 뒷면
 
 	}
 
