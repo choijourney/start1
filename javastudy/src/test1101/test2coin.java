@@ -44,7 +44,7 @@ class Coin {
 	}
 }
 
-public class test2 {
+public class test2coin {
 
 	public static void main(String[] args) {
 		Coin[] coin = new Coin[10];

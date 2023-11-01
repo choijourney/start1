@@ -14,38 +14,41 @@ package test1101;
  * 앞면	앞면
  * youCoin 승리  
  */
-public class test5 {
+public class test5coingame {
 
 	public static void main(String[] args) { // flip실행하면 side가 0이나1로 리턴해줌
 		Coin myCoin = new Coin();
 		Coin youCoin = new Coin();
-
 		String zero = "";
 		String zero2 = "";
-//		zero += 0;
-//		zero += 0;
-//		System.out.println(zero);
+
 		System.out.printf("myCoin\tyouCoin\n");
 		while (true) {
 			myCoin.flip();
 			youCoin.flip();
 			System.out.printf((myCoin.side == 0 ? "앞면\t" : "뒷면\t") + (youCoin.side == 0 ? "앞면\n" : "뒷면\n"));
-			if (myCoin.side == 0) {
+			if (myCoin.side == 0) { // myCoin이 앞면이면 zero에 0을, 뒷면이면 1을 추가.
 				zero += 0;
-			} else if (youCoin.side == 0) {
-				zero2 += "앞면";
+			} else {
+				zero += 1;
 			}
-
-			if (zero.contains("앞면앞면앞면")) {
+			if (youCoin.side == 0) {
+				zero2 += 0;
+			} else {
+				zero2 += 1;
+			}
+			// 0이 연속으로 나왔는지 확인
+			if (zero.contains("000") && zero2.contains("000")) {
+				System.out.println("비김"); // 비기는게 먼저와야함. 이기는게 앞코드에있으면 비겨도 비기는게 실행안함
+				break;
+			} else if (zero.contains("000")) {
 				System.out.println("myCoin 승리");
 				break;
-			} else if (zero2.contains("앞면앞면앞면")) {
+			} else if (zero2.contains("000")) {
 				System.out.println("youCoin 승리");
 				break;
-			} else if (zero.contains("앞면앞면앞면") && zero2.contains("앞면앞면앞면")) {
-				System.out.println("비김");
-				break;
 			}
+
 		}
 
 	}

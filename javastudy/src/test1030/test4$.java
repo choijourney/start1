@@ -29,20 +29,45 @@ public class test4$ {
 			r = (int) (Math.random() * 10);
 			t = (int) (Math.random() * 10);
 			int tem = arr[r];
-			arr2[r] = arr[t];
+			arr[r] = arr[t];
 			arr[t] = tem;
 
 		}
+		String sys = "";
+		for (int i = 0; i < arr2.length; i++) { // String sys 에 랜덤숫자 4개 저장
+			arr2[i] = arr[i];
+			sys += arr2[i];
+		}
+		System.out.println("sys " + sys);
 
+		int cnt = 0;
 		Scanner sc = new Scanner(System.in);
 		while (true) {
+			int strike = 0;
+			int ball = 0;
 			System.out.println("4자리 정수를 입력하세요.");
 			String num = sc.next();
 
-			for (int i = 0; i < arr2.length; i++) { // 배열에 arr
-				String sys = "";
-				sys += arr[i];
+			cnt++;
+
+			// sys랑 num 이랑 비교
+			for (int i = 0; i < sys.length(); i++) {
+				for (int j = 0; j < num.length(); j++) {
+					if (sys.charAt(i) == num.charAt(j)) {
+						if (i == j) {
+							strike++;
+						} else if (i != j) {
+							ball++;
+						}
+					}
+				}
 			}
+			if (strike == 4) {
+				System.out.println("정답! " + cnt + "번만에 맞췄어요.");
+				break;
+			} else
+				System.out.println(strike + "스트라이크 " + ball + "볼 ");
+
 		}
 	}
 
