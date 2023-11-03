@@ -30,7 +30,7 @@ class Circle {
 		this(1, x, y);
 	}
 
-	Circle(int r) { // r인지확실치않음
+	Circle(int r) {
 		this(r, 1, 1);
 	}
 

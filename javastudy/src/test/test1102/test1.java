@@ -87,7 +87,10 @@ public class test1 {
 		System.out.println(fe.name + "의 급여 : " + fe.getPay());
 
 		// 비정규직원 객체 생성
-		Date expireDate = new Date();
+		Date expireDate = new Date(); // 현재 일시. now
+		System.out.println("현재시간(밀리초)=" + expireDate.getTime());
+		// 날짜 : 자바는 1970년 1월 1일부터 현재까지의 시간을 밀리초로 계산해서 가지고있음
+		// setTime() : 날짜지정 => 현재부터 2년 후의 날짜로 지정
 		expireDate.setTime(expireDate.getTime() + 1000L * 60 * 60 * 24 * 365 * 2);
 		InformalEmployee ie = new InformalEmployee("이비정", "서울시 구로구", "영업부", expireDate, 1000);
 		System.out.println(ie);

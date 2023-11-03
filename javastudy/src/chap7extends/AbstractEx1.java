@@ -9,19 +9,21 @@ package chap7extends;
 // 1. 메서드의 선언부만 존재함. 구현부{} 가 업다. => abstract 예약어 사용
 // 2. 자손클래스에서 반드시 오버라이딩 필요.
 
-abstract class Shape {
+//제어자 : abstract => 클래스에서 사용 => 추상클래스 
+//					=> 메서드에서 사용 => 추상메서드
+abstract class Shape { // 추상클래스만 추상메서드를 멤버로 가질수있다
 	String type;
 
 	Shape(String type) {
 		this.type = type;
 	}
 
-	abstract double area();
+	abstract double area(); // 추상메서드 {} 구현하면 오류남
 
 	abstract double length();
 }
 
-class Circle extends Shape {
+class Circle extends Shape { // area(), length()메서드를 반드시 오버라이딩 해야함
 	int r;
 
 	Circle(int r) {
@@ -37,6 +39,31 @@ class Circle extends Shape {
 	@Override
 	double length() {
 		return r * 2 * Math.PI;
+	}
+}
+
+// 사각형(Rectangle) 클래스 구현하기
+// Shape클래스 상속받은 클래스
+// 멤버변수 : width, height
+// 멤버메서드 : area(),length() 
+
+class Rectangle extends Shape {
+	int width, height;
+
+	Rectangle(int width, int height) {
+		super("사각형");
+		this.width = width;
+		this.height = height;
+	}
+
+	@Override
+	double area() {
+		return width * height;
+	}
+
+	@Override
+	double length() {
+		return (width + height) * 2;
 	}
 }
 

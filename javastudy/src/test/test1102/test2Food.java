@@ -15,82 +15,105 @@ Snack 클래스 : Food 클래스의 하위 클래스
 사과,복숭아, 콜라, 사이다,비스킷,쿠키 클래스에 toString() 메서드를 구현하고
 각각의 이름을 리턴한다.
  */
-abstract class Food {
+class Food {
 	int price, point;
 
 	Food(int price) {
 		this.price = price;
-		point = price / 10;
+		this.point = price / 10;
 	}
 }
 
 class Fruit extends Food {
-	double brix;
+	double brix; // 당도
 
-	Fruit(int price) {
+	Fruit(int price, double brix) {
 		super(price);
+		this.brix = brix;
 	}
 }
 
 class Drink extends Food {
-	double ml;
+	int ml;
 
-	Drink(int price) {
+	Drink(int price, int ml) {
 		super(price);
+		this.ml = ml;
 	}
 }
 
 class Snack extends Food {
 	int gram;
 
-	Snack(int price) {
+	Snack(int price, int gram) {
 		super(price);
+		this.gram = gram;
 	}
 }
 
 class Apple extends Fruit {
-	Apple(int price, double brix) {
-		super(price);
-		this.brix = brix;
+	Apple(int price, double brix) { // 구동클래스에 맞도록 생성자 구현
+		super(price, brix);
+	}
+
+	public String toString() {
+		return "사과";
 	}
 }
 
 class Peach extends Fruit {
 	Peach(int price, double brix) {
-		super(price);
-		this.brix = brix;
+		super(price, brix);
+	}
+
+	public String toString() {
+		return "복숭아";
 	}
 }
 
 class Cock extends Drink {
-	Cock(int price, double ml) {
-		super(price);
-		this.ml = ml;
+	Cock(int price, int ml) {
+		super(price, ml);
+	}
+
+	public String toString() {
+		return "콜라";
 	}
 }
 
 class Sidar extends Drink {
-	Sidar(int price, double ml) {
-		super(price);
-		this.ml = ml;
+	Sidar(int price, int ml) {
+		super(price, ml);
 	}
+
+	public String toString() {
+		return "사이다";
+	}
+
 }
 
 class Biscuit extends Snack {
 	Biscuit(int price, int gram) {
-		super(price);
-		this.gram = gram;
+		super(price, gram);
 	}
+
+	public String toString() {
+		return "비스킷";
+	}
+
 }
 
 class Cookie extends Snack {
 	Cookie(int price, int gram) {
-		super(price);
-		this.gram = gram;
+		super(price, gram);
+	}
+
+	public String toString() {
+		return "쿠키";
 	}
 }
 
-public class test2 {
+public class test2Food {
 	public static void main(String[] args) {
 		Apple apple = new Apple(1000, 10.5);// 가격, 당도(brix)
 		System.out.println("사과 가격:" + apple.price);

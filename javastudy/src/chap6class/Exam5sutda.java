@@ -26,7 +26,7 @@ class SutdaCard {
 	}
 }
 
-public class Exam5 {
+public class Exam5sutda {
 
 	public static void main(String[] args) {
 		SutdaCard c1 = new SutdaCard(3, false); // 3인데 광이아님
