@@ -16,41 +16,34 @@ class SutdaCard {
 	final int number;
 	final boolean isKwang;
 
-	public SutdaCard(int number, boolean isKwang) {
-		this.number = number;
+	SutdaCard(int number, boolean isKwang) {
+		this.number = number; // 생성자에서 상수값 초기화
 		this.isKwang = isKwang;
 	}
 
+	@Override
 	public String toString() {
 		return number + ((isKwang) ? "K" : "");
 	}
 }
 
 class SutdaDeck {
-	String[] cards = new String[20];
-//	SutdaCard sutdaCard =new SutdaCard();
+	SutdaCard[] cards = new SutdaCard[20];
 
-	public SutdaDeck() {
-		int cnt = 1;
+	SutdaDeck() {
 		for (int i = 0; i < cards.length; i++) {
-			cards[i] = String.valueOf(cnt++);
-			if (cnt == 11) {
-				cnt = 1;
-			}
-
+			cards[i] = new SutdaCard((i % 10 + 1), ((i == 0 || i == 2 || i == 7) ? true : false)); // 생성자임
 		}
 	}
 
-	String result = ""; // String result; 이렇게써서 초기값 null이 출력됨
-
+	@Override
 	public String toString() {
-		for (int i = 0; i < cards.length; i++) {
-			result += cards[i] + ",";
-			if (i < 10 && cards[i] == "3" && cards[i] == "1" && cards[i] == "8") {
-				result += "K";
-			}
-		}
+		String result = "";
+		for (SutdaCard s : cards)
+			result += s + ",";
 		return result;
+//		return Arrays.toString(cards);
+//		return cards.toString();
 	}
 }
 
