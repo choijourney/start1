@@ -20,5 +20,9 @@ public class test3 {
 
 		Outer1.Inner2 in2 = new Outer1.Inner2(); // static클래스 객체화할때 외부클래스명.클래스명()
 		System.out.println(in2.iv);
+
+		// 다른방식.
+		System.out.println(new Outer1().new Inner1().iv);
+		System.out.println(new Outer1.Inner2().iv);
 	}
 }

@@ -16,20 +16,23 @@ Audio를 끕니다.
 건전지를 교환합니다.
 */
 interface RemoteControl {
+	// 추상 메서드: 구현클래스에서 반드시 오버라이딩 필요
 	void turnOn();
 
 	void turnOff();
 
 	void setVolume(int volumn);
 
+	// default 메서드 : 인스턴스메서드
 	default void setMute(boolean b) {
-		if (b == true)
+		if (b)
 			System.out.println("무음 처리합니다.");
 		else {
 			System.out.println("무음을 해제합니다.");
 		}
 	}
 
+	// static 메서드 : 클래스메서드. 인터페이스명.메서드명 으로만 호출가능함
 	static void changeBattery() {
 		System.out.println("건전지를 교환합니다.");
 	}

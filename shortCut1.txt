@@ -7,7 +7,9 @@ i 방향으로 3~5    i=0; i<=+half+i*2;   half는 num/2 (입력받은값/2)  �
 				matrix[i][j] = '*';
 			}
 		   	}
-
+ 오른쪽마우스 - source - genarate constructor field 생성자자동완성
+  source - override - equals, toStiring 등 Object의 메서드들있음
+source - generate toString   toString 자동오버라이딩
   	모든 단축키는 Window >> Preferences >> General >> Keys 메뉴에서 확인 및 변경이 가능하다.
 변수, 메소드 이름 한번에 변경 : alt + Shift + R
 alt + Shift + M : 블럭잡은 구문을 메소드로 추출 / 생성자생성 @@@@@@
